@@ -29,3 +29,4 @@ jobs:
         with:
           workflow: site.yml
           name: github-pages.zip
+          workflow_conclusion: failure, success, neutral, cancelled, skipped, timed_out, action_required
