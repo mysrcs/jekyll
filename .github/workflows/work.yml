@@ -52,12 +52,12 @@ jobs:
       - name: Delete Artifact
         uses: actions/github-script@v7
         with:
-           script: |
-             github.rest.actions.deleteArtifact({
-               owner: context.repo.owner,
-               repo: context.repo.repo,
-               artifact_id: ${{ steps.artifact-upload.outputs.artifact-id }}
-             });
+          script: |
+            github.rest.actions.deleteArtifact({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              artifact_id: ${{ steps.artifact-upload.outputs.artifact-id }}
+            });
 
   # Delete workflows
   del_runs:
