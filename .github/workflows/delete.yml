@@ -13,9 +13,7 @@ jobs:
       - name: Delete workflow runs
         uses: Rubber1Duck/delete-old-workflow-runs@v0.4.0
         with:
-          owner: ${{ github.repository_owner }}
           repository: mysrcs/mysrcs.github.io   # replace this with your own repository
           older-than-seconds: 100             # remove all workflow runs older than 1 day ( default 86400 )
-          # token: ${{ github.TOKEN }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
