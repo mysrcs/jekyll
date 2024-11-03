@@ -1,11 +1,11 @@
 ---
 layout: page
 title: Privacy Policy
-permalink: /privacy/
+permalink: /privacy-policy/
 ---
 
 ## Privacy Statement of {{ site.title }} GmbH
-*This Data Privacy Statement is provided in English for your convenience. Please note that in case of a dispute or discrepancy between the {{ site.citizen }} Data Privacy Statement and the English translation, the {{ site.citizen }} version shall prevail.*
+*This Data Privacy Statement is provided in English for your convenience. Please note that in case of a dispute or discrepancy between the {{ site.citizen }} Data Privacy Statement and the English translation, the [{{ site.citizen }}](/{{ site.locationShortCode }}/privacy-policy) version shall prevail.*
 
 **Status: {{ page.date | date: "%-d %B %Y"  }}**
 
