@@ -37,8 +37,6 @@ jobs:
           destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
-        with:
-          retention-days: 0
 
   # Deployment job
   deploy:
@@ -51,6 +49,15 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Delete Artifact
+        uses: actions/github-script@v7
+        with:
+           script: |
+             github.rest.actions.deleteArtifact({
+               owner: context.repo.owner,
+               repo: context.repo.repo,
+               artifact_id: ${{ steps.artifact-upload.outputs.artifact-id }}
+             });
 
   # Delete workflows
   del_runs:
@@ -67,14 +74,3 @@ jobs:
           older-than-seconds: 100             # remove all workflow runs older than 1 day ( default 86400 )
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  # Remove artifacts
-  remove-job:
-    runs-on: ubuntu-latest
-    needs: del_runs
-    steps:
-    - id: result 
-      uses: MichaelMelena/list-artifacts@v1
-    - uses: MichaelMelena/remove-artifacts@v1
-      with:
-        artifacts: ${{ steps.result.outputs.artifacts }}
