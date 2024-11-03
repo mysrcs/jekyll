@@ -35,7 +35,7 @@ jobs:
           source: ./     # Source directory (current directory)
           destination: ./_site  # Destination directory for built site
       - name: Upload built site as an artifact
-        id: github-pages
+        id: deployment
         uses: actions/upload-pages-artifact@v3
         with:
           name: build-artifact  # Artifact name
