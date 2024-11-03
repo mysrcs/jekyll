@@ -21,9 +21,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  environment:
-    name: github-pages
-    url: ${{ steps.deployment.outputs.page_url }}
   # Build job (creates the Jekyll site)
   build:
     runs-on: ubuntu-latest  # Runs on Ubuntu virtual machine
