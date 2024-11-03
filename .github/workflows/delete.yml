@@ -17,3 +17,12 @@ jobs:
           older-than-seconds: 100             # remove all workflow runs older than 1 day ( default 86400 )
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  cleanup-artifacts:
+    name: Job to clean up old artifacts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Download artifact
+        uses: philips-labs/action-delete-artifacts@v1.0.0
