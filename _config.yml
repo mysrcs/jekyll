@@ -1,36 +1,40 @@
+# URL configuration
 url: 'https://mysrcs.github.io'
 baseUrl: "/"
+
+# Metadata
 title: 'mysrcs'
 author: '@mysrcs'
 
+# Collections
 include: ["_pages"]
 collections: 
-     - pages
+- pages
+
+# Text to HTML Parser and it's configuration 
 markdown: kramdown
 kramdown:
   gfm_quirks: [paragraph_end]
 
+# Default values 
 defaults:
-  -
-    scope:
+  - scope:
+      path: ""
       type: posts
-      path: _posts
     values:
       is_post: true
       layout: post
       permalink: /:title/
-  -
-    scope:
+  - scope:
+      path: ""
       type: pages
-      path: _pages
     values:
       is_post: false
       layout: page
       permalink: /:title/
-  -
-    scope:
-      type: pages
-      path: _docs
+  - scope:
+      path: ""
+      type: docs
     values:
       is_post: false
       layout: documentation
