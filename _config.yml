@@ -6,10 +6,11 @@ baseUrl: "/"
 title: 'mysrcs'
 author: '@mysrcs'
 
-# Collections
+# Includes and Collections
 include: ["_pages"]
-collections: 
-- pages
+# collections: 
+# - foo
+# - bar
 
 # Text to HTML Parser and it's configuration 
 markdown: kramdown
