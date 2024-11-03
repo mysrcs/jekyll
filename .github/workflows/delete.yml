@@ -1,9 +1,8 @@
 name: Delete old workflow runs
 on:
-  push:
-    branches:
-      - main
-  page_build:
+  workflow_run:
+    workflows: ['site']  # Replace with the actual name of your build workflow
+    types: [completed]  
 jobs:
   del_runs:
     runs-on: ubuntu-latest
