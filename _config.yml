@@ -5,7 +5,9 @@ author: '@mysrcs'
 
 include: ["_pages"]
 # collections: pages
-markdown: gfm
+markdown: kramdown
+kramdown:
+  gfm_quirks: [paragraph_end]
 
 defaults:
   -
