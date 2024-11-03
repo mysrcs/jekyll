@@ -27,5 +27,5 @@ jobs:
       - name: Download artifact
         uses: philips-labs/action-delete-artifacts@v1.0.0
         with:
-          workflow: pages-build-deployment.yml
+          workflow: site.yml
           name: github-pages.zip
