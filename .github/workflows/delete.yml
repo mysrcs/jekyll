@@ -1,7 +1,4 @@
 name: Delete old workflow runs
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
 on:
   push:
     branches: ["master"]
@@ -13,19 +10,9 @@ jobs:
       actions: write
       contents: read
     steps:
-      - name: Delete workflow runs
-        uses: Mattraks/delete-workflow-runs@v2
+      - name: Delete all workflow runs
+        uses: christosgalano/delete-gh-workflow-runs@v1.0.0
         with:
-          token: ${{ github.token }}
-          repository: ${{ github.repository }}
-          retain_days: ${{ github.event.inputs.days }}
-          keep_minimum_runs: ${{ github.event.inputs.minimum_runs }}
-          delete_workflow_pattern: ${{ github.event.inputs.delete_workflow_pattern }}
-          delete_workflow_by_state_pattern: ${{ github.event.inputs.delete_workflow_by_state_pattern }}
-          delete_run_by_conclusion_pattern: >-
-            ${{
-              startsWith(github.event.inputs.delete_run_by_conclusion_pattern, 'Unsuccessful:')
-              && 'action_required,cancelled,failure,skipped'
-              || github.event.inputs.delete_run_by_conclusion_pattern
-            }}
-          dry_run: ${{ github.event.inputs.dry_run }}
+          owner: ${{ github.repository_owner }}
+          repo: ${{ inputs.repository }}
+          token: ${{ github.TOKEN }}
