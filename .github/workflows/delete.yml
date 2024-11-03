@@ -18,15 +18,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  cleanup-artifacts:
-    name: Job to clean up old artifacts
+  remove-job:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Download artifact
-        uses: philips-labs/action-delete-artifacts@v1.0.0
-        with:
-          workflow: site.yml
-          name: github-pages.zip
-          workflow_conclusion: failure, success, neutral, cancelled, skipped, timed_out, action_required
+    - id: result 
+      uses: MichaelMelena/list-artifacts@v1
+    - uses: MichaelMelena/remove-artifacts@v1
+      with:
+        artifacts: ${{ steps.result.outputs.artifacts }}
