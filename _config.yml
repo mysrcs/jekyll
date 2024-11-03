@@ -16,6 +16,7 @@ include: ["_pages"]
 markdown: kramdown
 kramdown:
   gfm_quirks: [paragraph_end]
+  parse_block_html: true
 
 # Default values 
 defaults:
