@@ -1,10 +1,9 @@
 name: Delete old workflow runs
 on:
-  push:
-    branches: ["main"]
-concurrency:
-  group: ${{ github.ref }}
-  cancel-in-progress: false
+  workflow_run:
+    workflows: [site.yml]
+    types: [completed]
+
 jobs:
   del_runs:
     runs-on: ubuntu-latest
