@@ -1336,3 +1336,16 @@ nav a:last-of-type {
     display: inline-block;
 }
 */
+
+
+
+
+
+@media print {
+  /* All your print styles go here */
+  #header,
+  #footer,
+  #nav {
+    display: none !important;
+  }
+}
