@@ -4,7 +4,8 @@ title: 'mysrcs'
 author: '@mysrcs'
 
 include: ["_pages"]
-# collections: pages
+collections: 
+     - pages
 markdown: kramdown
 kramdown:
   gfm_quirks: [paragraph_end]
