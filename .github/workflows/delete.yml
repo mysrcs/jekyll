@@ -1,9 +1,6 @@
 name: Delete old workflow runs
 on:
   page_build:
-    workflows: [site.yml]
-    types: [completed]
-
 jobs:
   del_runs:
     runs-on: ubuntu-latest
