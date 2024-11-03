@@ -2,7 +2,9 @@ name: Delete old workflow runs
 on:
   push:
     branches: ["main"]
-
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 jobs:
   del_runs:
     runs-on: ubuntu-latest
