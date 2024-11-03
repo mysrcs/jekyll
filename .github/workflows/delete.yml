@@ -1,5 +1,8 @@
 name: Delete old workflow runs
 on:
+  push:
+    branches:
+      - main
   page_build:
 jobs:
   del_runs:
