@@ -1,0 +1,34 @@
+url: 'https://mysrcs.github.io'
+baseUrl: "/"
+title: 'mysrcs'
+author: '@mysrcs'
+
+include: ["_pages"]
+# collections: pages
+# markdown: commonmark
+
+defaults:
+  -
+    scope:
+      type: posts
+      path: _posts
+    values:
+      is_post: true
+      layout: post
+      permalink: /:title/
+  -
+    scope:
+      type: pages
+      path: _pages
+    values:
+      is_post: false
+      layout: page
+      permalink: /:title/
+  -
+    scope:
+      type: pages
+      path: _docs
+    values:
+      is_post: false
+      layout: documentation
+      permalink: /docs/:categories/:title/

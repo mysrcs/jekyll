@@ -1,0 +1,11 @@
+{% include header.html %}
+<h1>
+  {{ site.title }}
+</h1>
+{{ content }}
+<h2>Latest Posts</h2>
+<ul class="posts">
+{% include archive.html %}
+</ul>
+<p><a href='/posts'>View all posts &rarr;</a></p>
+{% include footer.html %}

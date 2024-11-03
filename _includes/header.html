@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="color-scheme" content="dark light">
+	<link rel="icon" href="data:,">
+	
+	{% if page.layout == "default" %}
+	<title>{{ site.title }}</title>
+	{% else %}
+	<title>{{ page.title }}</title>
+	{% endif %}
+	<link href="/feed.xml" type="application/rss+xml" rel="alternate" title="RSS feed for blog posts" />
+	<link rel="stylesheet" href="/public/style.css">
+<style>
+	body {
+		box-sizing: border-box;
+		min-width: 200px;
+		max-width: 980px;
+		margin: 0 auto;
+		padding: 45px;
+	}
+
+	@media (max-width: 767px) {
+		body {
+			padding: 15px;
+		}
+	}
+</style>
+</head>
+<body>
+<nav>
+<!--
+<h2>
+  <a id="top" href="/" alt="Home">{{ site.title }}</a>
+</h2>
+-->
+<div class="wrap-collabsible">
+  <input id="collapsible" class="toggle" type="checkbox">
+  <label for="collapsible" class="lbl-toggle">...</label>
+  <div class="collapsible-content">
+    <div class="content-inner">
+	    <ul class="menu" id="menu">
+		    <a id="top" href="/" alt="Home"><code>Home</code></a>
+		    <li><a href="/about"><code>About</code></a></li>
+		    <li><a href="/posts"><code>Posts</code></a></li>
+		    <li><a href="/projects"><code>Projects</code></a></li>
+		    <li><a href="/cv"><code>Curriculum Vitae</code></a></li>
+	    </ul>
+    </div>
+  </div>
+</div>
+</nav>
+<main>
+<article>

@@ -1,0 +1,6 @@
+{% for post in site.posts %}
+<li>
+  <code>{{ post.date | date: "%-d %B %Y" }}</code>
+  <a href='{{ post.url }}'> - {{ post.title }}</a>
+</li>
+{% endfor %}
