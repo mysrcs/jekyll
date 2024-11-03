@@ -1343,9 +1343,9 @@ nav a:last-of-type {
 
 @media print {
   /* All your print styles go here */
-  #header,
-  #footer,
-  #nav {
+  .rss_and_top,
+  footer,
+  nav {
     display: none !important;
   }
 }
