@@ -1,5 +1,7 @@
 ---
-title: cv
+layout: page
+title: Curriculum Vitae
+permalink: /cv/
 ---
 
 > Alert! Currently unemployed yet I don't seek a job right now because I am resuming my academic studies.
