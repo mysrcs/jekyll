@@ -5,7 +5,7 @@ author: '@mysrcs'
 
 include: ["_pages"]
 # collections: pages
-# markdown: commonmark
+markdown: gfm
 
 defaults:
   -
