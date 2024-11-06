@@ -1,6 +1,6 @@
 # URL configuration
 url: 'https://mysrcs.github.io'
-baseUrl: "/"
+baseUrl: "/jekyll"
 
 # Metadata
 title: 'mysrcs'
