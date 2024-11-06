@@ -5,15 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="color-scheme" content="dark light">
 	<link rel="icon" href="data:,">
-	
-	{% if page.layout == "default" %}
-	<title>{{ site.title }}</title>
-	{% else %}
 	<title>{{ page.title }}</title>
-	{% endif %}
-	<link href="/feed.xml" type="application/rss+xml" rel="alternate" title="RSS feed for blog posts" />
-	<link rel="stylesheet" href="/public/style.css"/>
-	<link rel="stylesheet" media="print" href="/public/print.css"/>
+	<link href="{{ site.url }}/feed.xml" type="application/rss+xml" rel="alternate" title="RSS feed for blog posts" />
+	<link rel="stylesheet" href="{{ site.url }}/public/style.css"/>
+	<link rel="stylesheet" media="print" href="{{ site.url }}/public/print.css"/>
 <style>
 	body {
 		box-sizing: border-box;
@@ -33,17 +28,17 @@
 <body>
 <nav>
 <div class="wrap-collabsible">
-  <a id="top" href="/" alt="Home"><code>&larr;</code></a>
+  <a id="top" href="{{ site.url }}/" alt="Home"><code>&larr;</code></a>
   <input id="collapsible" class="toggle" type="checkbox">
   <label for="collapsible" class="lbl-toggle">...</label>
   <div class="collapsible-content">
     <div class="content-inner">
 	    <ul class="menu" id="menu">
-		    <a id="top" href="/" alt="Home"><code>Home</code></a>
-		    <li><a href="/about"><code>About</code></a></li>
-		    <li><a href="/posts"><code>Posts</code></a></li>
-		    <li><a href="/projects"><code>Projects</code></a></li>
-		    <li><a href="/cv"><code>Curriculum Vitae</code></a></li>
+		    <a id="top" href="{{ site.url }}/" alt="Home"><code>Home</code></a>
+		    <li><a href="{{ site.url }}/about"><code>About</code></a></li>
+		    <li><a href="{{ site.url }}/posts"><code>Posts</code></a></li>
+		    <li><a href="{{ site.url }}/projects"><code>Projects</code></a></li>
+		    <li><a href="{{ site.url }}/cv"><code>Curriculum Vitae</code></a></li>
 	    </ul>
     </div>
   </div>
